@@ -269,7 +269,7 @@ async function getTerm(storeName) {
         console.log("Department API", error)
     }
     let $ = cheerio.load(res);
-    for (let t = 0; t < $('#selSemesters').length; t++) {
+    for (let t = 0; t < $('#selSemesters > option').length; t++) {
         const termName = $('#selSemesters > option').eq(t).text();
         const termId = $('#selSemesters > option').eq(t).attr('value');
         terms.push({ termName, termId })
